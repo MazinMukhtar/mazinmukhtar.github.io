@@ -26,7 +26,7 @@ function App() {
         <div className="about-me">
           <h1>About Me</h1>
           <p>
-            Hello world! My name is Mazin Mukhtar and I am an Electrical and Computer Engineering student at the University of Toronto with a background in football scouting. My passion lies in intersection of technology and sports. I am actively seeking research opportunities in AI to explore its applications in engineering and sports. With a solid educational foundation, I possess robust problem-solving skills that I apply in my studies and practical endeavours. I am eager to engage with like-minded individuals and professionals who share my interests in the convergence of sports and engineering.
+              Hello world! I’m Mazin Mukhtar, an Electrical and Computer Engineering student at the University of Toronto with experience in the sports industry. I’m passionate about the intersection of technology with both sports and education. I am actively seeking research opportunities that use software to improve accessibility to learning environments and/or sports analytics. I’m always looking to connect with like-minded individuals and professionals who share these interests. 
           </p>
         </div>
         <div className="education">
@@ -37,32 +37,36 @@ function App() {
             className="coursework-toggle"
             onClick={() => setShowCoursework(prev => !prev)}
           >
-            {showCoursework ? 'Hide Coursework' : 'Show Coursework'}
+            {showCoursework ? 'Hide Courses' : 'Show Courses'}
           </button>
 
           {showCoursework && (
             <div className="coursework">
-              <h3>Coursework</h3>
               <ul>
-                <li>Calculus 1 (MAT186)</li>
-                <li>Calculus 2 (MAT187)</li>
-                <li>Linear Algebra (MAT188)</li>
-                <li>Engineering Chemistry & Materials Science (APS110)</li>
-                <li>Electrical Fundamentals (ECE110)</li>
-                <li>Computer Fundamentals (APS105)</li>
-                <li>Mechanics (CIV100)</li>
-                <li>Dynamics (MIE100)</li>
-                <li>Engineering Strategies & Practices 1 (APS111)</li>
-                <li>Engineering Strategies & Practices 2 (APS112)</li>
+                <li>Calculus 1</li>
+                <li>Calculus 2</li>
+                <li>Linear Algebra</li>
+                <li>Engineering Chemistry & Materials Science</li>
+                <li>Electrical Fundamentals</li>
+                <li>Computer Fundamentals</li>
+                <li>Mechanics</li>
+                <li>Dynamics</li>
+                <li>Engineering Strategies & Practices 1</li>
+                <li>Engineering Strategies & Practices 2</li>
               </ul>
             </div>
           )}
         </div>
       </main>
 
-      <section className="experience" id="experience">
-        <h1>Experience</h1>
-      </section>
+      <footer className="site-footer" id="contact">
+        <h3>Mazin Mukhtar</h3>
+        <div className="social-links">
+          <a href="https://github.com/MazinMukhtar" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/mazin-mukhtar-120227292/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:mazin.mukhtar@mail.utoronto.ca">Email</a>
+        </div>
+      </footer>
     </div>
   );
 }
