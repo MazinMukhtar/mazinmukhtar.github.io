@@ -3,8 +3,67 @@ import logo from './logo.svg';
 import './App.css';
 import profileImage from './Picture.jpeg';
 
+interface ExperienceDetail {
+  text: string;
+  url?: string;
+}
+
+interface ExperienceItem {
+  id: string;
+  title: string;
+  details: ExperienceDetail[];
+}
+
+const experiences: ExperienceItem[] = [
+  {
+    id: 'journalism',
+    title: 'Freelance Journalism (June 2023 - Present)',
+    details: [
+      { text: 'Guest Host on the Managing Madrid Podcast (Dec 2024)', url: 'https://www.youtube.com/watch?v=eYAY1CczULA' },
+      { text: 'Guest Host on the Managing Madrid Podcast (Oct 2024)', url: 'https://www.youtube.com/watch?v=fWrc-KniYBc&ab_channel=ManagingMadrid' },
+      { text: 'Guest Host on the Managing Madrid Podcast (Aug 2024)', url: 'https://www.youtube.com/watch?time_continue=2&v=uTtx4c63lAE&embeds_referring_euri=https%3A%2F%2Fmazinmukhtar.notion.site%2F&source_ve_path=MjM4NTE' }
+    ]
+  },
+  {
+    id: 'infrastructure-dev',
+    title: 'Infrastructure Developer @ UTMIST (Oct 2024 - April 2024)',
+    details: [
+      { text: 'Part of the Machine Learning Software Research Team' }
+    ]
+  },
+  {
+    id: 'high-school-tutor',
+    title: 'High School Tutor @ TDSB (Sept 2023 - May 2024)',
+    details: [
+      { text: 'Tutored high school students in mathematics and science.' }
+    ]
+  },
+  {
+    id: 'video-scout',
+    title: 'Remote Video Scout @ Dinamo Tbilisi (Aug 2023 - Nov 2023)',
+    details: [
+      { text: 'Demonstrated efficient database management.' }, 
+      { text: 'Showcased analytical skills through technical and physical profiling of players.' },
+      { text: 'Contact via email for sample work.'}
+    ]
+  },
+  {
+    id: 'web-designer',
+    title: 'Web Designer @ BrandEQ (Jul 2023 - Aug 2023)',
+    details: [
+      { text: 'Demonstrated proficient use of WordPress and front-end languages' },
+      { text: 'Showcased the ability to work with clients in a timely manner' }
+    ]
+  }
+];
+
 function App() {
   const [showCoursework, setShowCoursework] = useState(false);
+  const [visibleExperiences, setVisibleExperiences] = useState<Record<string, boolean>>({});
+
+  const toggleExperience = (id: string) => {
+    setVisibleExperiences(prev => ({ ...prev, [id]: !prev[id] }));
+  };
 
   return (
     <div className="app">
@@ -17,7 +76,7 @@ function App() {
           <a href="#home">Home</a>
           <a href="#projects">Projects</a>
           <a href="#featured-writings">Featured Writings</a>
-          <a href="#resume">Resume</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
         </nav>
       </header>
 
@@ -58,6 +117,35 @@ function App() {
           )}
         </div>
       </main>
+
+      <section className="experience" id="experience">
+        <h1>Experience</h1>
+        {experiences.map(item => (
+          <div key={item.id} className="experience-item">
+            <button
+              className="experience-toggle"
+              onClick={() => toggleExperience(item.id)}
+            >
+              {item.title}
+            </button>
+            {visibleExperiences[item.id] && (
+              <ul className="experience-detail">
+                {item.details.map((detail, idx) => (
+                  <li key={idx}>
+                    {detail.url ? (
+                      <a href={detail.url} target="_blank" rel="noopener noreferrer">
+                        {detail.text}
+                      </a>
+                    ) : (
+                      detail.text
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </section>
 
       <footer className="site-footer" id="contact">
         <h3>Mazin Mukhtar</h3>
