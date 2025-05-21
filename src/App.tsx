@@ -78,11 +78,11 @@ const writings = [
 ];
 
 const openPR = () => {
-    window.open('/resume.pdf', '_blank', 'noopener,noreferrer');
+    window.open('/PR.pdf', '_blank', 'noopener,noreferrer');
 };
 
 const openCDS = () => {
-    window.open('/resume.pdf', '_blank', 'noopener,noreferrer');
+    window.open('/CDS.pdf', '_blank', 'noopener,noreferrer');
 };
 
 const openModelling = () => {
