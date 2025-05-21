@@ -103,15 +103,20 @@ html, body, #root {
 
 .experience-pair {
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  justify-content: center;  
   align-items: flex-start;
   gap: 2rem;
+  margin: 0 auto;
+  max-width: 1400px;
 }
 
-.experience-pair > .experience,
+.experience-pair > .experience {
+  flex: 0 0 60%;
+  min-width: 0;
+}
+
 .experience-pair > .past-writings {
-  flex: 1;
+  flex: 0 0 40%;
   min-width: 0;
 }
 

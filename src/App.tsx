@@ -101,8 +101,12 @@ function App() {
           </div>
           <div className="education">
             <h1>Education</h1>
-            <p><strong>Univesity of Toronto</strong> - BASc in Electrical Engineering (2024-2029)</p>
+            <p><strong>University of Toronto</strong> - BASc in Electrical Engineering (2024-2029)</p>
           </div>
+        </section>
+
+        <section className="skills" id="skills"> 
+
         </section>
 
         <section className="experience-pair" id="experience-past-writings">
@@ -149,6 +153,7 @@ function App() {
           <a href="https://github.com/MazinMukhtar" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/mazin-mukhtar-120227292/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="mailto:mazin.mukhtar@mail.utoronto.ca">Email</a>
+          <a href="https://x.com/MazinMuk" target="_blank" rel="noopener noreferrer">X (Formely Twitter)</a>
         </div>
         <p>Site last updated on May 20, 2025</p>
       </footer>
