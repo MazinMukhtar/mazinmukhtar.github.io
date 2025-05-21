@@ -1,14 +1,22 @@
-.App {
-  text-align: center;
+html, body, #root { 
+  margin: 0; 
+  padding: 0; 
+  height: 100%; 
+  width: 100%; 
+}
+
+.app { 
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh; 
 }
 
 .home-page {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 1rem 1rem;
+  flex-direction: column;
+  padding: 2rem;
   background-color: #282c34;
-  color: white
+  color: white;
 }
 
 .site-header {
@@ -56,6 +64,15 @@
   margin-right: 2rem;
 }
 
+.about-me-education {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;         
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 2rem;          
+}
+
 .about-me {
   max-width: 700px;
 }
@@ -72,16 +89,11 @@
 
 .education {
   margin-left: 2rem;
-  max-width: 800px;
-  align-self: flex-start;
-  justify-content: flex-start;
-  margin-top: 1.8rem;
+
 }
 
 .education h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
-  margin-top: 0rem;
 }
 
 .education p {
@@ -89,42 +101,21 @@
   margin-bottom: 0.5rem;
 }
 
-.education ul {
-  list-style-type: disc;
-  padding: 1;
-  margin: 0;
-  column-count: 2;
-  column-gap: 1rem;
+.experience-pair {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
-.education li {
-  margin-bottom: 0.5rem;
+.experience-pair > .experience,
+.experience-pair > .past-writings {
+  flex: 1;
+  min-width: 0;
 }
 
-.coursework-toggle {
-  margin-top: 0.5rem;
-  display: inline-block;
-  background: none;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.coursework {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-}
-
-.experience {
-  width: 100%;
-  background-color: #282c34;
-  color: white;
-  padding: 2rem;
-}
-
-.experience h1 {
+.experience h1, .past-writings h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -159,19 +150,6 @@
 
 .experience-detail a:hover {
   text-decoration: underline;
-}
-
-.experience-pair {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 2rem;
-  background-color: #282c34;
-  color: white;
-}
-
-.experience, .past-writings {
-  width: 48%;
 }
 
 .past-writings h1 {

@@ -91,55 +91,57 @@ function App() {
       </header>
 
       <main className="home-page" id="home">
-        <img src={profileImage} className="profile-image" alt="profile" />
-        <div className="about-me">
-          <h1>Hello World!</h1>
-          <p>
+        <section className="about-me-education">
+          <img src={profileImage} className="profile-image" alt="profile" />
+          <div className="about-me">
+            <h1>Hello World!</h1>
+            <p>
               I’m Mazin Mukhtar, an Electrical and Computer Engineering student at the University of Toronto with experience in the sports industry. I’m passionate about the intersection of technology with both sports and education. I am actively seeking research opportunities that use software to improve accessibility to learning environments and/or sports analytics. I’m always looking to connect with like-minded individuals and professionals who share these interests. 
-          </p>
-        </div>
-        <div className="education">
-          <h1>Education</h1>
-          <p><strong>Univesity of Toronto</strong> - BASc in Electrical Engineering (2024-2029)</p>
-        </div>
-      </main>
+            </p>
+          </div>
+          <div className="education">
+            <h1>Education</h1>
+            <p><strong>Univesity of Toronto</strong> - BASc in Electrical Engineering (2024-2029)</p>
+          </div>
+        </section>
 
-<section className="experience-pair">
-        <div className="experience" id="experience">
-          <h1>Experience</h1>
-          {experiences.map(item => (
-            <div key={item.id} className="experience-item">
-              <button className="experience-toggle" onClick={() => toggleExperience(item.id)}>
-                {item.title}
-              </button>
-              {visibleExperiences[item.id] && (
-                <ul className="experience-detail">
-                  {item.details.map((detail, idx) => (
-                    <li key={idx}>
-                      {detail.url ? (
-                        <a href={detail.url} target="_blank" rel="noopener noreferrer">{detail.text}</a>
-                      ) : (
-                        detail.text
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div className="past-writings" id="past-writings">
-          <h1>Past Writings</h1>
-          <ul>
-            {writings.map((w, i) => (
-              <li key={i}>
-                <a href={w.url} target="_blank" rel="noopener noreferrer">{w.title}</a>
-              </li>
+        <section className="experience-pair" id="experience-past-writings">
+          <div className="experience" id="experience">
+            <h1>Experience</h1>
+            {experiences.map(item => (
+              <div key={item.id} className="experience-item">
+                <button className="experience-toggle" onClick={() => toggleExperience(item.id)}>
+                  {item.title}
+                </button>
+                {visibleExperiences[item.id] && (
+                  <ul className="experience-detail">
+                    {item.details.map((detail, idx) => (
+                      <li key={idx}>
+                        {detail.url ? (
+                          <a href={detail.url} target="_blank" rel="noopener noreferrer">{detail.text}</a>
+                        ) : (
+                          detail.text
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             ))}
-          </ul>
-        </div>
-      </section>
+          </div>
+
+          <div className="past-writings" id="past-writings">
+            <h1>Past Writings</h1>
+            <ul>
+              {writings.map((w, i) => (
+                <li key={i}>
+                  <a href={w.url} target="_blank" rel="noopener noreferrer">{w.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </main>
 
       <footer className="site-footer" id="contact">
         <h3>Mazin Mukhtar</h3>
