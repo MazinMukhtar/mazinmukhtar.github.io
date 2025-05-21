@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import profileImage from './Picture.jpeg';
 
@@ -21,7 +20,8 @@ const experiences: ExperienceItem[] = [
     details: [
       { text: 'Guest Host on the Managing Madrid Podcast (Dec 2024)', url: 'https://www.youtube.com/watch?v=eYAY1CczULA' },
       { text: 'Guest Host on the Managing Madrid Podcast (Oct 2024)', url: 'https://www.youtube.com/watch?v=fWrc-KniYBc&ab_channel=ManagingMadrid' },
-      { text: 'Guest Host on the Managing Madrid Podcast (Aug 2024)', url: 'https://www.youtube.com/watch?time_continue=2&v=uTtx4c63lAE&embeds_referring_euri=https%3A%2F%2Fmazinmukhtar.notion.site%2F&source_ve_path=MjM4NTE' }
+      { text: 'Guest Host on the Managing Madrid Podcast (Aug 2024)', url: 'https://www.youtube.com/watch?time_continue=2&v=uTtx4c63lAE&embeds_referring_euri=https%3A%2F%2Fmazinmukhtar.notion.site%2F&source_ve_path=MjM4NTE' },
+      { text: 'Guest Writer for Madrid Xtra (June 2023)', url: 'https://gegenpress.substack.com/p/jude-bellingham-scouting-report' }
     ]
   },
   {
@@ -57,6 +57,14 @@ const experiences: ExperienceItem[] = [
   }
 ];
 
+const writings = [
+  { title: 'Jude Bellingham — Scouting Report', url: 'https://gegenpress.substack.com/p/jude-bellingham-scouting-report' },
+  { title: 'The anatomy of a dribbler — Vinicius Junior', url: 'https://mazinmukhtar.beehiiv.com/p/anatomy-dribbler-vincius-jnior' },
+  { title: 'Dominik Szoboszlai’s elite but lacking ball-striking', url: 'https://mazinmukhtar.beehiiv.com/p/dominik-szoboszlais-elite-lacking-ballstriking' }, 
+  { title: 'Part 1: How to Press in a 4-2-3-1 vs 4+2 Build-up', url: 'https://gegenpress.substack.com/p/part-1-how-to-press-in-a-4-2-3-142'}, 
+  { title: 'Football is about progression', url: 'https://mazinmukhtar.substack.com/p/football-is-about-progression'}
+];
+
 function App() {
   const [showCoursework, setShowCoursework] = useState(false);
   const [visibleExperiences, setVisibleExperiences] = useState<Record<string, boolean>>({});
@@ -67,6 +75,8 @@ function App() {
 
   return (
     <div className="app">
+      <title>Mazin Mukhtar</title>
+
       <header className="site-header"> 
         <div className="site-header__branding">
           <img src={profileImage} alt="Profile" className="header-profile-image" />
@@ -83,68 +93,52 @@ function App() {
       <main className="home-page" id="home">
         <img src={profileImage} className="profile-image" alt="profile" />
         <div className="about-me">
-          <h1>About Me</h1>
+          <h1>Hello World!</h1>
           <p>
-              Hello world! I’m Mazin Mukhtar, an Electrical and Computer Engineering student at the University of Toronto with experience in the sports industry. I’m passionate about the intersection of technology with both sports and education. I am actively seeking research opportunities that use software to improve accessibility to learning environments and/or sports analytics. I’m always looking to connect with like-minded individuals and professionals who share these interests. 
+              I’m Mazin Mukhtar, an Electrical and Computer Engineering student at the University of Toronto with experience in the sports industry. I’m passionate about the intersection of technology with both sports and education. I am actively seeking research opportunities that use software to improve accessibility to learning environments and/or sports analytics. I’m always looking to connect with like-minded individuals and professionals who share these interests. 
           </p>
         </div>
         <div className="education">
           <h1>Education</h1>
-          <h2>University of Toronto - BASc in Electrical Engineering (2024-2029)</h2>
-
-          <button
-            className="coursework-toggle"
-            onClick={() => setShowCoursework(prev => !prev)}
-          >
-            {showCoursework ? 'Hide Courses' : 'Show Courses'}
-          </button>
-
-          {showCoursework && (
-            <div className="coursework">
-              <ul>
-                <li>Calculus 1</li>
-                <li>Calculus 2</li>
-                <li>Linear Algebra</li>
-                <li>Engineering Chemistry & Materials Science</li>
-                <li>Electrical Fundamentals</li>
-                <li>Computer Fundamentals</li>
-                <li>Mechanics</li>
-                <li>Dynamics</li>
-                <li>Engineering Strategies & Practices 1</li>
-                <li>Engineering Strategies & Practices 2</li>
-              </ul>
-            </div>
-          )}
+          <p><strong>Univesity of Toronto</strong> - BASc in Electrical Engineering (2024-2029)</p>
         </div>
       </main>
 
-      <section className="experience" id="experience">
-        <h1>Experience</h1>
-        {experiences.map(item => (
-          <div key={item.id} className="experience-item">
-            <button
-              className="experience-toggle"
-              onClick={() => toggleExperience(item.id)}
-            >
-              {item.title}
-            </button>
-            {visibleExperiences[item.id] && (
-              <ul className="experience-detail">
-                {item.details.map((detail, idx) => (
-                  <li key={idx}>
-                    {detail.url ? (
-                      <a href={detail.url} target="_blank" rel="noopener noreferrer">
-                        {detail.text}
-                      </a>
-                    ) : (
-                      detail.text
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))}
+<section className="experience-pair">
+        <div className="experience" id="experience">
+          <h1>Experience</h1>
+          {experiences.map(item => (
+            <div key={item.id} className="experience-item">
+              <button className="experience-toggle" onClick={() => toggleExperience(item.id)}>
+                {item.title}
+              </button>
+              {visibleExperiences[item.id] && (
+                <ul className="experience-detail">
+                  {item.details.map((detail, idx) => (
+                    <li key={idx}>
+                      {detail.url ? (
+                        <a href={detail.url} target="_blank" rel="noopener noreferrer">{detail.text}</a>
+                      ) : (
+                        detail.text
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="past-writings" id="past-writings">
+          <h1>Past Writings</h1>
+          <ul>
+            {writings.map((w, i) => (
+              <li key={i}>
+                <a href={w.url} target="_blank" rel="noopener noreferrer">{w.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <footer className="site-footer" id="contact">
@@ -154,6 +148,7 @@ function App() {
           <a href="https://www.linkedin.com/in/mazin-mukhtar-120227292/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="mailto:mazin.mukhtar@mail.utoronto.ca">Email</a>
         </div>
+        <p>Site last updated on May 20, 2025</p>
       </footer>
     </div>
   );
