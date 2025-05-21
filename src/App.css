@@ -5,6 +5,10 @@ html, body, #root {
   width: 100%; 
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .app { 
   display: flex; 
   flex-direction: column; 
@@ -237,6 +241,15 @@ html, body, #root {
   color: white;
 }
 
+
+.APS112 {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #282c34;
+  color: white;
+}
+
 .APS112 h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -258,6 +271,22 @@ html, body, #root {
   color: white;
 }
 
+.APS112 ul {
+  padding-left: 1rem;
+  font-size: 1rem;
+  color: white;
+}
+
+.APS112 li {
+  margin-bottom: 1rem;
+}
+
+.APS112 li > ul {
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+  list-style: circle;
+}
+
 .APS112 a:hover {
   text-decoration: underline;
 }
@@ -275,4 +304,140 @@ html, body, #root {
 .aps112-doc:hover {
   background-color: #fff;
   color: #111215;
+}
+
+.data-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 2rem auto;           
+  background-color: #282c34;   
+  color: white;                
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #444;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.data-table thead th {
+  background-color: #111215;   
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);  
+}
+
+.data-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);   
+}
+
+.data-table th {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.aps105 {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #282c34;
+  color: white;
+}
+
+.aps105 h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.aps105 p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.aps105-repo {
+  display: inline-block;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.aps105-repo:hover {
+  background-color: #fff;
+  color: #111215;
+}
+
+.featured-writings-page {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #282c34;
+  color: white;
+}
+
+.featured-writings-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+} 
+
+.featured-writings-page h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.featured-writings-page p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.featured-writings-page a {
+  text-decoration: none;
+  color: white;
+}
+
+.featured-writings-page a:hover {
+  text-decoration: underline;
+}
+
+.featured-writings-page ul {
+  padding-left: 1rem;
+  font-size: 1rem;
+  color: white;
+}
+
+.featured-writings-page li {
+  margin-bottom: 1rem;
+}
+
+.featured-writings-page li > ul {
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+.featured-writings-page li a {
+  text-decoration: none;
+  color: white;
+}
+
+.featured-writings-page li a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .experience-pair {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .experience-pair > .experience,
+  .experience-pair > .past-writings {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
 }
