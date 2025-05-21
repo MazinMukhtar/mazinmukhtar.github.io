@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import profileImage from './Picture.jpeg';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 interface ExperienceDetail {
   text: string;
@@ -28,7 +29,7 @@ const experiences: ExperienceItem[] = [
     id: 'infrastructure-dev',
     title: 'Infrastructure Developer @ UTMIST (Oct 2024 - April 2024)',
     details: [
-      { text: 'Part of the Machine Learning Software Research Team' }
+      { text: 'Member of the Machine Learning Software Research Team'}
     ]
   },
   {
@@ -65,7 +66,34 @@ const writings = [
   { title: 'Football is about progression', url: 'https://mazinmukhtar.substack.com/p/football-is-about-progression'}
 ];
 
-function App() {
+const openPR = () => {
+    window.open('/resume.pdf', '_blank', 'noopener,noreferrer');
+};
+
+const openCDS = () => {
+    window.open('/resume.pdf', '_blank', 'noopener,noreferrer');
+};
+
+const openModelling = () => {
+    window.open('/resume.pdf', '_blank', 'noopener,noreferrer');
+}
+
+// Footer component
+const Footer: React.FC = () => (
+    <footer className="site-footer" id="contact">
+      <h3>Mazin Mukhtar</h3>
+      <div className="social-links">
+        <a href="https://github.com/MazinMukhtar" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/mazin-mukhtar-120227292/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:mazin.mukhtar@mail.utoronto.ca">Email</a>
+        <a href="https://x.com/MazinMuk" target="_blank" rel="noopener noreferrer">X (Formely Twitter)</a>
+      </div>
+      <p>Site last updated on May 20, 2025</p>
+    </footer>
+)
+
+// HomePage component
+const HomePage: React.FC = () => {
   const [showCoursework, setShowCoursework] = useState(false);
   const [visibleExperiences, setVisibleExperiences] = useState<Record<string, boolean>>({});
 
@@ -76,19 +104,6 @@ function App() {
   return (
     <div className="app">
       <title>Mazin Mukhtar</title>
-
-      <header className="site-header"> 
-        <div className="site-header__branding">
-          <img src={profileImage} alt="Profile" className="header-profile-image" />
-          <span className="site-header__logo">Mazin Mukhtar</span>
-        </div>
-        <nav className="site-header__nav">
-          <a href="#home">Home</a>
-          <a href="#projects">Projects</a>
-          <a href="#featured-writings">Featured Writings</a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-        </nav>
-      </header>
 
       <main className="home-page" id="home">
         <section className="about-me-education">
@@ -102,7 +117,7 @@ function App() {
           <div className="education">
             <h1>Education</h1>
             <p><strong>University of Toronto</strong> - BASc in Electrical Engineering (2024-2029)</p>
-          </div>
+          </div>  
         </section>
 
         <section className="skills" id="skills"> 
@@ -146,18 +161,67 @@ function App() {
           </div>
         </section>
       </main>
-
-      <footer className="site-footer" id="contact">
-        <h3>Mazin Mukhtar</h3>
-        <div className="social-links">
-          <a href="https://github.com/MazinMukhtar" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/mazin-mukhtar-120227292/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:mazin.mukhtar@mail.utoronto.ca">Email</a>
-          <a href="https://x.com/MazinMuk" target="_blank" rel="noopener noreferrer">X (Formely Twitter)</a>
-        </div>
-        <p>Site last updated on May 20, 2025</p>
-      </footer>
     </div>
+  );
+
+}
+
+// ProjectsPage component
+const ProjectsPage: React.FC = () => (
+
+  <div className="app"> 
+    <title>Mazin Mukhtar — Projects</title>
+
+    <main className="projects-page">
+      <section className="APS112">
+        <h1>Managing the Risks of Lithium-Ion Micro-Mobility Devices Within the Shelter System</h1>
+        <p>
+          <strong>Problem Description</strong>: This project was worked on with the City of Toronto and conducted as part of the <a href="https://www.engineering.utoronto.ca/engineering-strategies-practice/" target="_blank" rel="noopener noreferrer">University of Toronto's Engineering Strategies and Practice program</a>. The goal of the project was to identify the risks associated with lithium-ion batteries in micro-mobility devices within the Toronto Shelter System and mitigate them.
+        </p>
+        <p>
+          <strong>Solution</strong>: Working on...
+        </p>
+        <h2>Project Documents</h2>
+        <p>
+          <button className="aps112-doc" onClick={openPR}>Project Requirements</button>
+        </p>
+        <p>
+          <button className="aps112-doc" onClick={openCDS}>Conceptual Design Specifications</button>
+        </p>
+        <p>
+          <button className="aps112-doc" onClick={openModelling}>Modelling</button>
+        </p>
+      </section>
+    </main>
+  </div>
+);
+
+function App() {
+  return (
+    <Router>
+      <div className="app">
+        <header className="site-header">
+          <div className="site-header__branding">
+            <img src={profileImage} alt="Profile" className="header-profile-image" />
+            <span className="site-header__logo">Mazin Mukhtar</span>
+          </div>
+          <nav className="site-header__nav">
+            <Link to="/">Home</Link>
+            <Link to="/projects">Projects</Link>
+            <Link to="/featured-writings">Featured Writings</Link>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          </nav>
+        </header>
+
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          {/* Add route for Featured Writings if needed */}
+        </Routes>
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

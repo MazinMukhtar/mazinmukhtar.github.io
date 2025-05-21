@@ -139,6 +139,11 @@ html, body, #root {
   font-size: 1rem;
 }
 
+.experience-toggle:hover {
+  background-color: #fff;
+  color: #111215;
+}
+
 .experience-detail {
   margin: 0.5rem 0 0 1rem;
   list-style: disc;
@@ -221,4 +226,52 @@ html, body, #root {
   margin-top: 0.5rem;
   font-size: 0.8rem;
   color: white;
+}
+
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #282c34;
+  color: white;
+}
+
+.APS112 h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.APS112 h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.APS112 p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.APS112 a {
+  text-decoration: none;
+  color: white;
+}
+
+.APS112 a:hover {
+  text-decoration: underline;
+}
+
+.aps112-doc {
+  display: inline-block;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.aps112-doc:hover {
+  background-color: #fff;
+  color: #111215;
 }
