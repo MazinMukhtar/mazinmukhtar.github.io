@@ -358,6 +358,7 @@ const ProjectsPage: React.FC = () => (
   </div>
 );
 
+// FeaturedWritingsPage component
 const FeaturedWritingsPage: React.FC = () => ( 
   <div className="app">
     <title>Mazin Mukhtar — Featured Writings</title>
