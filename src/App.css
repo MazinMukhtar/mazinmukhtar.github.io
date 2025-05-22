@@ -3,6 +3,8 @@ html, body, #root {
   padding: 0; 
   height: 100%; 
   width: 100%; 
+  background-color: #111215;
+  overflow-x: hidden;
 }
 
 *, *::before, *::after {
@@ -13,6 +15,7 @@ html, body, #root {
   display: flex; 
   flex-direction: column; 
   min-height: 100vh; 
+  background-color: #282c34;
 }
 
 .home-page {
@@ -61,8 +64,8 @@ html, body, #root {
 }
 
 .profile-image {
-  width: 12.5%;
-  height: 12.5%;
+  width: 15%;
+  height: 15%;
   object-fit: cover;
   border-radius: 10%;
   margin-right: 2rem;
@@ -430,6 +433,12 @@ html, body, #root {
   text-decoration: underline;
 }
 
+@media (max-width: 480px) {
+  .site-header__logo {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .experience-pair {
     flex-direction: column;
@@ -439,5 +448,20 @@ html, body, #root {
   .experience-pair > .past-writings {
     flex: 1 1 auto;
     max-width: 100%;
+  }
+  .profile-image {
+    display: none;
+  }
+  .header-profile-image {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .profile-image {
+    width: 20%;
+    height: 20%;
+  }
+  .header-profile-image {
+    display: none;
   }
 }
