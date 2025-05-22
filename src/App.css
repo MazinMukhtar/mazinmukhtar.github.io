@@ -38,8 +38,8 @@ html, body, #root {
 }
 
 .header-profile-image {
-  width: 40px;
-  height: 40px;
+  width: 10%;
+  height: 10%;
   object-fit: cover;
   border-radius: 50%;
   margin-right: 0.5rem;
@@ -61,8 +61,8 @@ html, body, #root {
 }
 
 .profile-image {
-  width: 200px;
-  height: 200px;
+  width: 12.5%;
+  height: 12.5%;
   object-fit: cover;
   border-radius: 10%;
   margin-right: 2rem;
@@ -78,7 +78,7 @@ html, body, #root {
 }
 
 .about-me {
-  max-width: 700px;
+  max-width: 50%;
 }
 
 .about-me h1 {
@@ -111,13 +111,13 @@ html, body, #root {
   align-items: flex-start;
   gap: 10rem;
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 80%;
 }
 
 .experience-pair > .experience {
   flex: 0 0 60%;
   min-width: 0;
-  max-width: 500px;
+  max-width: 40%;
 }
 
 .experience-pair > .past-writings {
