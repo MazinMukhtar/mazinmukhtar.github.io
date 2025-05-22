@@ -102,7 +102,7 @@ const Footer: React.FC = () => (
         <a href="mailto:mazin.abdelgalil@gmail.com">Email</a>
         <a href="https://x.com/MazinMuk" target="_blank" rel="noopener noreferrer">X (Formely Twitter)</a>
       </div>
-      <p>Site last updated on May 21, 2025</p>
+      <p>Site last updated on May 21, 2025 (Site still a work in progress).</p>
     </footer>
 )
 
