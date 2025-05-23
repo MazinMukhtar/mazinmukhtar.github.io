@@ -315,7 +315,7 @@ html, body, #root {
   border-collapse: collapse;
   margin: 2rem auto;           
   background-color: #282c34;   
-  color: white;                
+  color: white;    
 }
 
 .data-table th,
@@ -433,12 +433,52 @@ html, body, #root {
   text-decoration: underline;
 }
 
+/* iPhone */
+@media (max-width: 412px) {
+  .site-header__nav {
+    font-size: 0.8rem;
+  }
+
+  .site-footer p, .site-footer .social-links a {
+    font-size: 0.6rem;
+  }
+}
+
+/* iPhone Pro */
 @media (max-width: 480px) {
   .site-header__logo {
     display: none;
   }
+
+  .site-header__nav {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .about-me, .about-me-education {
+    max-width: 100%;
+  }
+
+  .site-footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .site-footer a {
+    font-size: 0.8rem;
+  }
+
+  .data-table {
+    display: block;
+    width: 100%;         
+    max-width: 100%;
+    margin: 0 auto;     
+    overflow-x: auto;
+  }
 }
 
+/* iPad Mini */
 @media (max-width: 768px) {
   .experience-pair {
     flex-direction: column;
@@ -456,11 +496,17 @@ html, body, #root {
     display: none;
   }
 }
+
+/* iPad/iPad Air */
 @media (max-width: 1000px) {
   .profile-image {
-    width: 20%;
-    height: 20%;
+    display: none;
   }
+
+  .about-me, .about-me-education {
+    max-width: 100%;
+  }
+
   .header-profile-image {
     display: none;
   }

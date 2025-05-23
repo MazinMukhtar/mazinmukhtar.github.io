@@ -35,7 +35,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     id: 'infrastructure-dev',
-    title: 'Infrastructure Developer @ UTMIST (Oct 2024 - April 2024)',
+    title: 'Infrastructure Developer @ UTMIST (Oct 2024 - April 2025)',
     details: [
       { text: 'Member of the Machine Learning Software Research Team'},
       { text: 'Conducted preliminary research on semantic clone detection using code analysis techniques'}
